@@ -1,0 +1,43 @@
+{
+    "version": 8,
+    "configurePresets": [
+        {
+            "name": "gcc_debug",
+            "displayName": "gcc_debug",
+            "description": "Using compilers: C = /usr/bin/gcc, CXX = /usr/bin/g++",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "/usr/bin/gcc",
+                "CMAKE_CXX_COMPILER": "/usr/bin/g++",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "gcc_release",
+            "displayName": "gcc_release",
+            "description": "Using compilers: C = /usr/bin/gcc, CXX = /usr/bin/g++",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "/usr/bin/gcc",
+                "CMAKE_CXX_COMPILER": "/usr/bin/g++",
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "gcc_debug",
+            "description": "",
+            "displayName": "gcc_debug",
+            "configurePreset": "gcc_debug"
+        },
+        {
+            "name": "gcc_release",
+            "description": "",
+            "displayName": "gcc_release",
+            "configurePreset": "gcc_release"
+        }
+    ]
+}
