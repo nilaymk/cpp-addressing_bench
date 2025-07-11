@@ -1,4 +1,7 @@
-﻿cmake_minimum_required (VERSION 3.10)
+﻿cmake_minimum_required (VERSION 3.12)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 project ("addressing_bench" LANGUAGES C CXX)
 
@@ -19,9 +22,4 @@ add_executable (addressing_bench_tests
 	"src/open_addressing_hash_map.h"
 	"src/bucketing_hash_map.h"
  )
-
-
-if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET addressing_bench_tests PROPERTY CXX_STANDARD 20)
-endif()
 
